@@ -1,0 +1,212 @@
+<!-- start -->
+<section class="background-radial-gradient overflow-hidden">
+  <style>
+    .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: radial-gradient(650px circle at 0% 0%,
+          hsl(218, 41%, 35%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+          hsl(218, 46%, 12%) 15%,
+          hsl(219, 44%, 8%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%);
+    }
+
+    .button-69 {
+align-items: center;
+background-image: linear-gradient(144deg,#ff4040, #f67979 50%,#eb0000);
+border: 0;
+border-radius: 8px;
+box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+box-sizing: border-box;
+color: #ffffff;
+display: flex;
+font-family: Phantomsans, sans-serif;
+font-size: 20px;
+justify-content: center;
+line-height: 1em;
+max-width: 100%;
+min-width: 140px;
+padding: 3px;
+text-decoration: none;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+white-space: nowrap;
+cursor: pointer;
+}
+
+.button-69:active,
+.button-64:hover {
+outline: 0;
+}
+
+.button-69 span {
+background-color: rgb(5, 6, 45);
+padding: 16px 24px;
+border-radius: 6px;
+width: 100%;
+height: 100%;
+transition: 300ms;
+}
+
+.button-69:hover span {
+background: none;
+}
+
+    .button-64 {
+align-items: center;
+background-image: linear-gradient(144deg,hwb(115 25% 0%), #71f67792 50%,#00eb08);
+border: 0;
+border-radius: 8px;
+box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+box-sizing: border-box;
+color: #ffffff;
+display: flex;
+font-family: Phantomsans, sans-serif;
+font-size: 20px;
+justify-content: center;
+line-height: 1em;
+max-width: 100%;
+min-width: 140px;
+padding: 3px;
+text-decoration: none;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+white-space: nowrap;
+cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+outline: 0;
+}
+
+.button-64 span {
+background-color: rgb(5, 6, 45);
+padding: 16px 24px;
+border-radius: 6px;
+width: 100%;
+height: 100%;
+transition: 300ms;
+}
+
+.button-64:hover span {
+background: none;
+}
+
+@media (min-width: 768px) {
+.button-64 {
+  font-size: 24px;
+  min-width: 196px;
+}
+}
+
+    #radius-shape-1 {
+      height: 220px;
+      width: 220px;
+      top: -60px;
+      left: -130px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+    }
+
+    #radius-shape-2 {
+      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+      bottom: -60px;
+      right: -110px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+    }
+
+    .bg-glass {
+      background-color: hsla(0, 0%, 44%, 0.164) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+    }
+  </style>
+
+<div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+  <div class="row gx-lg-5 align-items-center mb-5">
+    <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+      <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%); font-size: 40px;">
+        HighSurf <br />
+        <span style="color: rgba(2, 2, 2, 0.639); font-size: 30px;">A portal in internet</span>
+      </h1>
+
+    </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <form [formGroup]="myform" #formData=ngForm novalidate>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="fname" formControlName="first_name" class="form-control " placeholder="First name"/>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="lname"class="form-control"  formControlName="last_name" placeholder="Last name"/>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="email" class="form-control"  formControlName="email" placeholder="Email address"/>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="pwd" class="form-control"  formControlName="pwd" placeholder="Password"/>
+              </div>
+
+              <p style="color:white; font-size: 19px; text-align:left">GENDER ></p>
+
+
+              <mat-radio-group style="color: white;" formControlName="gender" formControlName="gender">
+                <mat-radio-button value="Male">Male</mat-radio-button>
+                <mat-radio-button value="Female">Female</mat-radio-button>
+              </mat-radio-group><br><br>
+              
+
+              <!-- Checkbox -->
+              <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                <label style="color: white" class="form-check-label" for="form2Example33">
+                  latest in-site offers to your mail
+                </label>
+              </div><br>
+
+              <!-- Submit button -->
+              <div class="text-center">
+                <button class= "createnew button-64" [disabled]="!formData.valid" (click)="Update()"  style="font-size: 15px; padding: 7px px ;width: 220px;; transform: translate(44%,-40%); " role="button"   ><span class="text" >UPDATE</span></button>
+                <button class= "createnew button-69"  (click)="Delete()"  style="font-size: 15px; padding: 7px px ;width: 220px;; transform: translate(44%,-40%); " role="button"  ><span class="text" >DELETE</span></button>
+                <br>
+              <a routerLink="../home" style="color:rgb(69, 108, 251); float: left; font-size: 17px; text-decoration: none;">
+                < back to login
+              </a>
+              </div>
+            </form>
+          </div>
+          <p class="mb-0 opacity-70" style="color: hsla(0, 0%, 0%, 0.304); font-size: 16px;text-align: right;">
+            HIGHSURF
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- completed -->

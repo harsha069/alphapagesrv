@@ -1,0 +1,377 @@
+.background{
+  width:100%;
+  height:100%;
+  background-size:cover;
+  filter: brightness(15%) saturate(80%);
+  z-index: -1;
+}
+
+.midtext{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%,-50%);
+  text-align: center;
+  color: white;
+  width: 50%;
+}
+
+.midtext h1{
+  font-size: 4.5rem;
+  animation-delay: 0.3s;
+  width: 200%;
+  text-align: center;
+}
+
+body {
+  font-family: 'Gruppo';font-size: 22px;
+}
+
+h1{
+  font-family: 'Arizonia', cursive;
+font-family: 'Italiana', serif;
+}
+
+.tracking-in-expand {
+-webkit-animation: tracking-in-expand 2.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        animation: tracking-in-expand 2.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.midtag{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,100%);
+  text-align: center;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+}
+.midtag p{
+  font-family: 'Courier New', monospace;
+  color: rgb(255, 0, 0);
+
+}
+
+
+.midtextani{
+  animation-name: color;
+  animation-delay: 5s;
+}
+
+@keyframes color{
+  from {color: white;}
+  to {color: red;}
+}
+
+
+
+.focus-in-contract-bck {
+-webkit-animation: focus-in-contract-bck 3.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: focus-in-contract-bck 3.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes focus-in-contract-bck {
+
+  
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+            transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+            transform: translateZ(12px);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+            transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+            transform: translateZ(12px);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+
+
+/*  below is the new testing code ofr main*/
+
+
+.bar1 {
+height: 45rem;
+transform: translate(0%,0%);
+background-color: rgb(0, 0, 0);
+}
+
+.second {
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 1% 0%;
+background-color: #000000;
+}
+
+.sideh{
+width: 10%;
+}
+
+
+/*card below*/
+
+
+body{
+display:flex;
+margin:0;
+padding:0 0rem;
+min-height: 115vh;
+max-width: 160vh;
+justify-content: center;
+align-items: center;
+font-family: arial;
+border : none;
+box-shadow:none;
+transform: translate(-2%,2%);
+background-color: #000000;
+}
+
+.container{
+width: 960px;
+height: 110vh;
+position: relative;
+display: flex;
+justify-content: space-between;
+flex-wrap:wrap;
+padding: 0% 0% ;
+background-color: rgba(0, 0, 0, 0.625);
+}
+
+.container .card{
+position: relative;
+border : none;
+box-shadow:none;
+background-color: #00000000;
+}
+
+.container .card .face{
+width:300px;
+height: 200px;
+transition:.4s;
+box-shadow:none;
+}
+
+.container .card .face.face1{
+position: relative;
+background: #333;
+display: flex;
+justify-content: center;
+align-content:center;
+align-items: center;
+z-index: 1;
+transform: translateY(100px);
+height: 10rem;
+
+}
+
+.container .card .face.face1:hover{
+position: relative;
+background: #333;
+display: flex;
+justify-content: center;
+align-content:center;
+align-items: center;
+z-index: 1;
+transform: translateY(100px);
+height: 7rem;
+text-align: center;
+
+}
+
+.container .card:hover .face.face1{
+transform: translateY(0);
+height: 5rem;
+text-align: center;
+box-shadow:
+  inset 0 0 20px whitesmoke,
+  inset 20px 0 80px #f0f,
+  inset -20px 0 80px #0ff,
+  inset 20px 0 300px #f0f,
+  inset -20px 0 300px #0ff,
+  0 0 50px #fff,
+  -10px 0 80px #f0f,
+  10px 0 80px #0ff;
+ 
+}
+
+.container .card:hover .face.face1.uppercardsh{
+transform: translateY(60px);
+height: 5rem;
+text-align: center;
+box-shadow:
+  inset 0 0 20px whitesmoke,
+  inset 20px 0 80px #f0f,
+  inset -20px 0 80px #0ff,
+  inset 20px 0 300px #f0f,
+  inset -20px 0 300px #0ff,
+  0 0 50px #fff,
+  -10px 0 80px #f0f,
+  10px 0 80px #0ff;
+ 
+}
+
+
+.container .card .face.face1 .content{
+opacity: .2;
+transition:  0.5s;
+text-align: center;
+
+
+ 
+
+
+
+
+}
+
+.container .card:hover .face.face1 .content{
+opacity: 1;
+
+}
+
+
+
+.container .card .face.face1 .content h3{
+font-size: 2.3rem;
+color: white;
+text-align: center;
+transition: transform .9s;
+
+
+}
+
+.container .card .face.face1 .content h3:hover{
+font-size: 2.3rem;
+color: white;
+text-align: center;
+transform: scale(1.5);
+transition: transform .4s;
+
+
+}
+
+.container .card .face.face1 .content a{
+ transition: .5s;
+}
+
+.container .card .face.face2{ /* this is after hover box for sizing*/
+ position: relative;
+ background: whitesmoke;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 10px;
+box-sizing: border-box;
+height: 10rem;
+transform: translateY(-60px);
+}
+
+.container .card:hover .face.face2{
+  transform: translateY(0);
+  box-shadow:none;
+
+}
+
+.container .card:hover .face.face2.uppercardsp{
+transform: translateY(50px);
+box-shadow:none;
+
+}
+
+
+
+.container .card .face.face2 .content p, a{
+font-size: 9pt;
+margin: 0 ;
+padding: 0;
+color:rgb(0, 0, 0);
+transform: translate(0%,0%);
+}
+
+
+.container .card .face.face2 .content{
+height: 5rem;
+}
+
+.container .card .face.face2{
+height: 10rem;
+}
+
+.container .card .face.face2 .content a{
+text-decoration:none;
+color: rgb(131, 131, 131);
+background-color: rgb(0, 0, 0);
+box-sizing: border-box;
+outline : 1px dashed rgb(98, 97, 97);
+padding: 10px;
+margin: 15px 0 0;
+display: inline-block;
+transform: translate(-10%,-1%);
+}
+
+.container .card .face.face2 .content a:hover{
+background: rgb(0, 0, 0) ;
+color: whitesmoke; 
+box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+
+
+
+
+
+
+
+

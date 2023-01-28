@@ -1,0 +1,1564 @@
+<nav class="navbar navbar-expand-lg bg-light navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!--<a class="navbar-brand" routerLink="../home" style="font-size: 15px; color: rgb(125, 187, 245)">A WEBX PROJECT</a>-->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul
+        class="navbar-nav me-auto mb-2 mb-lg-0"
+        style="transform: translate(2%)"
+      >
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            style="
+              color: rgba(156, 155, 155, 0.813);
+              font-size: 17px;
+              font-weight: 300;
+            "
+            aria-current="page"
+            >ABOUT:</a
+          >
+        </li>
+        <a>
+          <button
+            class="btn btn-outline-info"
+            routerLink="../about_resume"
+            style="font-size: 15px"
+            type="submit"
+          >
+            SECTION
+          </button></a
+        >
+      </ul>
+      <form class="d-flex" role="search">
+        <p
+          style="
+            color: rgba(134, 134, 134, 0.813);
+            font-size: 27px;
+            transform: translate(-179%, 35%);
+          "
+        >
+          Testing :
+        </p>
+        <button
+          class="btn btn-outline-danger"
+          style="font-size: 25px;transform: translate(-123%, 0%);"
+          type="submit"
+          routerLink="../alphamain"
+        >
+          Alpha - M
+        </button>
+      </form>
+      <form class="d-flex" role="search">
+        <p
+          style="
+            color: rgba(134, 134, 134, 0.813);
+            font-size: 17px;
+            transform: translate(-7%, 35%);
+          "
+        >
+          Admin Panel :
+        </p>
+        <button
+          class="btn btn-outline-info"
+          style="font-size: 15px"
+          type="submit"
+          (click)="DataBase()"
+          routerLink="../read"
+        >
+          Database
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<! body below and header above>
+
+<!-- start -->
+<section class="background-radial-gradient overflow-hidden">
+  <style>
+    .no {
+      text-decoration: none;
+    }
+
+    .fullclick {
+      margin: 1em 0;
+      padding: 0;
+      max-width: 30em;
+    }
+    .fullclick li {
+      list-style: none;
+      margin: 1em 0;
+      padding: 20px 10px;
+      background: #2b2b2b;
+      position: relative;
+    }
+    .fullclick a.main {
+      color: #85baff;
+      text-align: right;
+      display: block;
+      z-index: 1;
+    }
+    .fullclick li a.main::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: " ";
+    }
+
+    .sideh {
+      background-color: rgba(5, 5, 5, 0.315);
+      padding-top: 50px;
+      padding-right: 30px;
+      padding-bottom: 50px;
+      padding-left: 200px;
+      transform: translate(-1%, -10%);
+      width: 1053px;
+      font-size: 35px;
+      color: rgb(255, 255, 255);
+      font-family: "Courier New", monospace;
+      border-radius: 25px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      text-align: center;
+    }
+
+    .pics {
+      background-color: hsla(0, 0%, 0%, 0.349);
+      border-radius: 25px;
+    }
+
+    .pictext {
+      color: white;
+    }
+
+    .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: radial-gradient(
+          650px circle at 0% 0%,
+          hsl(218, 41%, 35%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%
+        ),
+        radial-gradient(
+          1250px circle at 100% 100%,
+          hsl(219, 46%, 12%) 15%,
+          hsl(219, 44%, 8%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%
+        );
+      filter: brightness(1.5);
+    }
+
+    .button-64 {
+      align-items: center;
+      background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+      border: 0;
+      border-radius: 8px;
+      box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+      box-sizing: border-box;
+      color: #ffffff;
+      display: flex;
+      font-family: Phantomsans, sans-serif;
+      font-size: 20px;
+      justify-content: center;
+      line-height: 1em;
+      max-width: 100%;
+      min-width: 140px;
+      padding: 3px;
+      text-decoration: none;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .button-64:active,
+    .button-64:hover {
+      outline: 0;
+    }
+
+    .button-64 span {
+      background-color: rgb(5, 6, 45);
+      padding: 16px 24px;
+      border-radius: 6px;
+      width: 100%;
+      height: 100%;
+      transition: 300ms;
+    }
+
+    .button-64:hover span {
+      background: none;
+    }
+
+    @media (min-width: 768px) {
+      .button-64 {
+        font-size: 24px;
+        min-width: 196px;
+      }
+    }
+  </style>
+
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1
+          class="my-5 display-5"
+          style="
+            color: hsl(218, 81%, 95%);
+            font-size: 80px;
+            transform: translate(63%);
+          "
+        >
+          H&nbsp;i&nbsp;g&nbsp;h&nbsp;&nbsp;S&nbsp;u&nbsp;r&nbsp;f <br /><br />
+          <h1
+            style="
+              color: rgb(0, 0, 0);
+              font-size: 45px;
+              transform: translate(7%);
+              font-weight: 900;
+            "
+          >
+            A portal in internet
+          </h1>
+        </h1>
+        <br /><br />
+        <hr
+          style="
+            background-color: rgb(137, 137, 137);
+            width: 900%;
+            transform: translate(-20%);
+          "
+        />
+        <br /><br /><br /><br /><br />
+
+        <!-- HOME WEB SPACE-->
+
+        <h1 class="sideh">
+          Top Educational Sites 2022&#160;&#160;&#160;&#160;
+        </h1>
+        <div class="card-group" style="width: 65rem">
+          <div class="card pics">
+            <a href="https://www.udemy.com/" target="_blank">
+              <img
+                src="https://s.udemycdn.com/meta/default-meta-image-v2.png"
+                style="background-color: white; height: 98%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.udemy.com/"
+                style="font-size: 14px"
+                >PAID:80%<br />FREE:20%</a
+              ><br /><br />
+              <a class="card-text pictext no" href="https://www.udemy.com/"
+                ><span style="color: #b349f9">Udemy</span> is an online learning
+                and teaching marketplace with over 185000 courses and 49 million
+                students.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 2 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.coursera.org/" target="_blank">
+              <img
+                src="https://149362230.v2.pressablecdn.com/wp-content/uploads/2018/08/coursera-social-logo-brand.png"
+                style="background-color: white; height: 98%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.coursera.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:70%</a
+              ><br />
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.coursera.org/for-university-and-college-students"
+                target="_blank"
+                style="font-size: 14px"
+                >FREE:30%</a
+              ><br /><br />
+              <a
+                href="https://www.coursera.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: #0083fe">Coursera</span> is an open online
+                course website featuring post-secondary courses from top global
+                academic institutions.</a
+              ><br /><br /><br />
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 5 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.edx.org/" target="_blank">
+              <img
+                src="data:image/png;base64,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"
+                style="background-color: white; height: 88%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -4%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.edx.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:10%<br />FREE:90%</a
+              ><br /><br />
+              <a
+                href="https://www.edx.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: #f3f3f3">Edx</span> is an American massive
+                open online course provider created by Harvard and MIT.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.geeksforgeeks.org/" target="_blank">
+              <img
+                src="https://www.tedxxie.in/static/media/sponsor1.2dc91b4fef8a6ef1b866.jpg"
+                style="background-color: white; height: 73.5%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -13%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:30%<br />FREE:70%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                ><span style="color: #499b5a">GeeksforGeeks</span> is a one-stop
+                solution for CS/IT students to learn Programming Concepts, Data
+                Structures & Algorithms, Coding Practice, etc.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.w3schools.com/" target="_blank">
+              <img
+                src="https://internet-salmagundi.com/wp-content/uploads/2019/03/W3-MatFrame-895x493px-Qual100.jpg"
+                style="background-color: white; height: 94%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -2%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.w3schools.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:10%<br />FREE:90%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.w3schools.com/"
+                target="_blank"
+                ><span style="color: #7a7b7a">W3school</span> create simplified
+                and interactive learning experiences. Learning web development
+                should be easy to understand.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.udacity.com/" target="_blank">
+              <img
+                src="https://uploads-ssl.webflow.com/5d58e3031e139811311ef0d6/5edeaf67cc966449938cd1f3_udacity.png"
+                style="background-color: white; height: 93%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -2%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:40%<br />FREE:60%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                ><span style="color: #52ddf6">Udacity</span> has around 200
+                courses that are completely free.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+        </div>
+        <br /><br /><br /><br /><br /><br />
+
+        <h1 class="sideh">
+          Top Transportation Sites 2022&#160;&#160;&#160;&#160;
+        </h1>
+        <div class="card-group" style="width: 65rem">
+          <div class="card pics">
+            <a href="https://www.irctc.co.in/" target="_blank">
+              <img
+                src="https://pixlok.com/wp-content/uploads/2021/04/IRCTC-Logo-PNG-768x768.jpg"
+                style="background-color: white; height: 51.5%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -26%)">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.irctc.co.in/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:100%</a
+              ><br />
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.grabon.in/irctc-coupons/"
+                target="_blank"
+                style="font-size: 14px; color: red"
+                >OFFER</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.irctc.co.in/"
+                target="_blank"
+                ><span style="color: #392bfe">IRCTC</span> is an Indian Railway
+                Catering and Tourism Corporation is an Indian public sector
+                undertaking that provides ticketing, catering, and tourism
+                services for the Indian Railways.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 2 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.goindigo.in/" target="_blank">
+              <img
+                src="https://1000logos.net/wp-content/uploads/2021/07/IndiGo-Logo.png"
+                style="background-color: white; height: 82.2%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -5%)">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.goindigo.in/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:100%</a
+              ><br />
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.goindigo.in/campaigns/indigo-offers.html"
+                target="_blank"
+                style="font-size: 14px; color: red"
+                >OFFER</a
+              ><br /><br />
+              <a
+                href="https://www.coursera.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: hsl(209, 100%, 50%)">Indigo</span> is
+                useful fro booking your domestic & international flight tickets
+                at the lowest airfare with best offers at goIndiGo.in website
+                and app.</a
+              ><br /><br /><br />
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 5 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.orangetravels.in/" target="_blank">
+              <img
+                src="https://lh3.googleusercontent.com/vhyYPs_bM661HyGmv7AqZjKJoUjsotNVY01dfnzPaqVH8gnG3ZNsP-kCaS3mDd4rIw"
+                style="background-color: white; height: 51.7%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -25%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.orangetravels.in/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:100%<br
+              /></a>
+              <a
+                class="card-title pictext no"
+                href="https://www.grabon.in/orangetravels-coupons/"
+                target="_blank"
+                style="font-size: 14px; color: red"
+                >OFFER<br /></a
+              ><br />
+              <a
+                href="https://www.orangetravels.in/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: orangered">Orange traveles</span> Online
+                Bus Ticket Booking at orangetravels. <br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://m.uber.com/" target="_blank"></a>
+            <img
+              src="https://download.logo.wine/logo/Uber/Uber-Logo.wine.png"
+              style="background-color: white; height: 17%"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <a
+                class="card-title pictext no"
+                href="https://m.uber.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:100%<br
+              /></a>
+              <a
+                class="card-title pictext no"
+                href="https://www.grabon.in/uber-coupons/"
+                target="_blank"
+                style="font-size: 14px; color: red"
+                >OFFER<br /></a
+              ><br />
+              <a
+                class="card-text pictext no"
+                href="https://m.uber.com/"
+                target="_blank"
+                ><span style="color: white"> Uber </span> is a Technologies,
+                Inc. Uber is an American mobility as a service provider.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.rapido.bike/" target="_blank">
+              <img
+                src="https://www.pinpng.com/pngs/m/350-3501762_rapido-customer-care-number-png-download-rapido-bike.png"
+                style="background-color: white; height: 84%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -5%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.rapido.bike/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:100%<br
+              /></a>
+              <a
+                class="card-title pictext no"
+                href="https://www.grabon.in/rapido-coupons/"
+                target="_blank"
+                style="font-size: 14px; color: red"
+                >OFFER<br /></a
+              ><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.rapido.bike/"
+                target="_blank"
+                ><span style="color: yellow">Rapido</span> is India's first and
+                fastest-growing Bike taxi app with a whopping 25 Million+ app
+                downloads. We are now running operations in more than 100
+                cities.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.udacity.com/" target="_blank">
+              <img
+                src="https://e7.pngegg.com/pngimages/808/870/png-clipart-call-taxi-ola-cabs-india-coupon-taxi-logo-india-thumbnail.png"
+                style="background-color: white; height: 77%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -7%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:100%<br
+              /></a>
+              <a
+                class="card-title pictext no"
+                href="https://www.grabon.in/ola-coupons/"
+                target="_blank"
+                style="font-size: 14px; color: red"
+                >OFFER<br /></a
+              ><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                ><span style="color: #e4e73a">Ola</span> The perfect way to get
+                through your everyday travel needs. City taxis are available
+                24/7 and you can book and travel in an instant.
+              </a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+        </div>
+        <br /><br /><br /><br /><br /><br />
+        <h1 class="sideh">
+          Top Trip Planning Sites 2022&#160;&#160;&#160;&#160;
+        </h1>
+        <div class="card-group" style="width: 65rem">
+          <div class="card pics">
+            <a href="https://www.udemy.com/" target="_blank">
+              <img
+                src="https://s.udemycdn.com/meta/default-meta-image-v2.png"
+                style="background-color: white; height: 98%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.udemy.com/"
+                style="font-size: 14px"
+                >PAID:80%<br />FREE:20%</a
+              ><br /><br />
+              <a class="card-text pictext no" href="https://www.udemy.com/"
+                ><span style="color: #b349f9">Udemy</span> is an online learning
+                and teaching marketplace with over 185000 courses and 49 million
+                students.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 2 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.coursera.org/" target="_blank">
+              <img
+                src="https://149362230.v2.pressablecdn.com/wp-content/uploads/2018/08/coursera-social-logo-brand.png"
+                style="background-color: white; height: 98%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.coursera.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:70%</a
+              ><br />
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.coursera.org/for-university-and-college-students"
+                target="_blank"
+                style="font-size: 14px"
+                >FREE:30%</a
+              ><br /><br />
+              <a
+                href="https://www.coursera.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: #0083fe">Coursera</span> is an open online
+                course website featuring post-secondary courses from top global
+                academic institutions.</a
+              ><br /><br /><br />
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 5 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.edx.org/" target="_blank">
+              <img
+                src="data:image/png;base64,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"
+                style="background-color: white; height: 88%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -4%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.edx.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:10%<br />FREE:90%</a
+              ><br /><br />
+              <a
+                href="https://www.edx.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: #f3f3f3">Edx</span> is an American massive
+                open online course provider created by Harvard and MIT.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.geeksforgeeks.org/" target="_blank"></a>
+            <img
+              src="https://www.tedxxie.in/static/media/sponsor1.2dc91b4fef8a6ef1b866.jpg"
+              style="background-color: white; height: 21.7%"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <a
+                class="card-title pictext no"
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:30%<br />FREE:70%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                ><span style="color: #499b5a">GeeksforGeeks</span> is a one-stop
+                solution for CS/IT students to learn Programming Concepts, Data
+                Structures & Algorithms, Coding Practice, etc.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.w3schools.com/" target="_blank">
+              <img
+                src="https://internet-salmagundi.com/wp-content/uploads/2019/03/W3-MatFrame-895x493px-Qual100.jpg"
+                style="background-color: white; height: 94%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -2%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.w3schools.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:10%<br />FREE:90%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.w3schools.com/"
+                target="_blank"
+                ><span style="color: #7a7b7a">W3school</span> create simplified
+                and interactive learning experiences. Learning web development
+                should be easy to understand.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.udacity.com/" target="_blank">
+              <img
+                src="https://uploads-ssl.webflow.com/5d58e3031e139811311ef0d6/5edeaf67cc966449938cd1f3_udacity.png"
+                style="background-color: white; height: 93%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -2%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:40%<br />FREE:60%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                ><span style="color: #52ddf6">Udacity</span> has around 200
+                courses that are completely free.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+        </div>
+        <br /><br /><br /><br /><br /><br />
+        <h1 class="sideh">
+          Top Entertainment Sites 2022&#160;&#160;&#160;&#160;
+        </h1>
+        <div class="card-group" style="width: 65rem">
+          <div class="card pics">
+            <a href="https://www.udemy.com/" target="_blank">
+              <img
+                src="https://s.udemycdn.com/meta/default-meta-image-v2.png"
+                style="background-color: white; height: 98%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.udemy.com/"
+                style="font-size: 14px"
+                >PAID:80%<br />FREE:20%</a
+              ><br /><br />
+              <a class="card-text pictext no" href="https://www.udemy.com/"
+                ><span style="color: #b349f9">Udemy</span> is an online learning
+                and teaching marketplace with over 185000 courses and 49 million
+                students.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 2 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.coursera.org/" target="_blank">
+              <img
+                src="https://149362230.v2.pressablecdn.com/wp-content/uploads/2018/08/coursera-social-logo-brand.png"
+                style="background-color: white; height: 98%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.coursera.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:70%</a
+              ><br />
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.coursera.org/for-university-and-college-students"
+                target="_blank"
+                style="font-size: 14px"
+                >FREE:30%</a
+              ><br /><br />
+              <a
+                href="https://www.coursera.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: #0083fe">Coursera</span> is an open online
+                course website featuring post-secondary courses from top global
+                academic institutions.</a
+              ><br /><br /><br />
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 5 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.edx.org/" target="_blank">
+              <img
+                src="data:image/png;base64,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"
+                style="background-color: white; height: 88%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -4%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.edx.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:10%<br />FREE:90%</a
+              ><br /><br />
+              <a
+                href="https://www.edx.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: #f3f3f3">Edx</span> is an American massive
+                open online course provider created by Harvard and MIT.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.geeksforgeeks.org/" target="_blank"></a>
+            <img
+              src="https://www.tedxxie.in/static/media/sponsor1.2dc91b4fef8a6ef1b866.jpg"
+              style="background-color: white; height: 21.7%"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <a
+                class="card-title pictext no"
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:30%<br />FREE:70%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                ><span style="color: #499b5a">GeeksforGeeks</span> is a one-stop
+                solution for CS/IT students to learn Programming Concepts, Data
+                Structures & Algorithms, Coding Practice, etc.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.w3schools.com/" target="_blank">
+              <img
+                src="https://internet-salmagundi.com/wp-content/uploads/2019/03/W3-MatFrame-895x493px-Qual100.jpg"
+                style="background-color: white; height: 94%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -2%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.w3schools.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:10%<br />FREE:90%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.w3schools.com/"
+                target="_blank"
+                ><span style="color: #7a7b7a">W3school</span> create simplified
+                and interactive learning experiences. Learning web development
+                should be easy to understand.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.udacity.com/" target="_blank">
+              <img
+                src="https://uploads-ssl.webflow.com/5d58e3031e139811311ef0d6/5edeaf67cc966449938cd1f3_udacity.png"
+                style="background-color: white; height: 93%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -2%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:40%<br />FREE:60%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                ><span style="color: #52ddf6">Udacity</span> has around 200
+                courses that are completely free.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+        </div>
+        <br /><br /><br /><br /><br /><br />
+        <h1 class="sideh">Top Review Sites 2022&#160;&#160;&#160;&#160;</h1>
+        <div class="card-group" style="width: 65rem">
+          <div class="card pics">
+            <a href="https://www.udemy.com/" target="_blank">
+              <img
+                src="https://s.udemycdn.com/meta/default-meta-image-v2.png"
+                style="background-color: white; height: 98%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.udemy.com/"
+                style="font-size: 14px"
+                >PAID:80%<br />FREE:20%</a
+              ><br /><br />
+              <a class="card-text pictext no" href="https://www.udemy.com/"
+                ><span style="color: #b349f9">Udemy</span> is an online learning
+                and teaching marketplace with over 185000 courses and 49 million
+                students.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 2 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.coursera.org/" target="_blank">
+              <img
+                src="https://149362230.v2.pressablecdn.com/wp-content/uploads/2018/08/coursera-social-logo-brand.png"
+                style="background-color: white; height: 98%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.coursera.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:70%</a
+              ><br />
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.coursera.org/for-university-and-college-students"
+                target="_blank"
+                style="font-size: 14px"
+                >FREE:30%</a
+              ><br /><br />
+              <a
+                href="https://www.coursera.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: #0083fe">Coursera</span> is an open online
+                course website featuring post-secondary courses from top global
+                academic institutions.</a
+              ><br /><br /><br />
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 5 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.edx.org/" target="_blank">
+              <img
+                src="data:image/png;base64,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"
+                style="background-color: white; height: 88%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -4%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.edx.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:10%<br />FREE:90%</a
+              ><br /><br />
+              <a
+                href="https://www.edx.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: #f3f3f3">Edx</span> is an American massive
+                open online course provider created by Harvard and MIT.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.geeksforgeeks.org/" target="_blank"></a>
+            <img
+              src="https://www.tedxxie.in/static/media/sponsor1.2dc91b4fef8a6ef1b866.jpg"
+              style="background-color: white; height: 21.7%"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <a
+                class="card-title pictext no"
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:30%<br />FREE:70%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                ><span style="color: #499b5a">GeeksforGeeks</span> is a one-stop
+                solution for CS/IT students to learn Programming Concepts, Data
+                Structures & Algorithms, Coding Practice, etc.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.w3schools.com/" target="_blank">
+              <img
+                src="https://internet-salmagundi.com/wp-content/uploads/2019/03/W3-MatFrame-895x493px-Qual100.jpg"
+                style="background-color: white; height: 94%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -2%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.w3schools.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:10%<br />FREE:90%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.w3schools.com/"
+                target="_blank"
+                ><span style="color: #7a7b7a">W3school</span> create simplified
+                and interactive learning experiences. Learning web development
+                should be easy to understand.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.udacity.com/" target="_blank">
+              <img
+                src="https://uploads-ssl.webflow.com/5d58e3031e139811311ef0d6/5edeaf67cc966449938cd1f3_udacity.png"
+                style="background-color: white; height: 93%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -2%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:40%<br />FREE:60%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                ><span style="color: #52ddf6">Udacity</span> has around 200
+                courses that are completely free.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+        </div>
+        <br /><br /><br /><br /><br /><br />
+        <h1 class="sideh">Top Fashion Sites 2022&#160;&#160;&#160;&#160;</h1>
+        <div class="card-group" style="width: 65rem">
+          <div class="card pics">
+            <a href="https://www.udemy.com/" target="_blank">
+              <img
+                src="https://s.udemycdn.com/meta/default-meta-image-v2.png"
+                style="background-color: white; height: 98%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.udemy.com/"
+                style="font-size: 14px"
+                >PAID:80%<br />FREE:20%</a
+              ><br /><br />
+              <a class="card-text pictext no" href="https://www.udemy.com/"
+                ><span style="color: #b349f9">Udemy</span> is an online learning
+                and teaching marketplace with over 185000 courses and 49 million
+                students.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 2 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.coursera.org/" target="_blank">
+              <img
+                src="https://149362230.v2.pressablecdn.com/wp-content/uploads/2018/08/coursera-social-logo-brand.png"
+                style="background-color: white; height: 98%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.coursera.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:70%</a
+              ><br />
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.coursera.org/for-university-and-college-students"
+                target="_blank"
+                style="font-size: 14px"
+                >FREE:30%</a
+              ><br /><br />
+              <a
+                href="https://www.coursera.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: #0083fe">Coursera</span> is an open online
+                course website featuring post-secondary courses from top global
+                academic institutions.</a
+              ><br /><br /><br />
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 5 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.edx.org/" target="_blank">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASUAAACsCAMAAAAKcUrhAAAAk1BMVEX///8CJisAAAD7+/sAGiHo7OwAHSMAHyUAGyEADBUAIygAGB7c4OFicXM+U1by9PQAAA4AEhoAAAkAFBsACBIAChRSYWTO09S/xcaxuLmTnJ7W2tvu8PDi5eVue32gqauMlpdLWFt7hogVMjfHzM0xRkq4v8AnPkJdbG+DjY+dpqcHKzA0SU0gNzs8UVSQmJotP0M7ZOv6AAAOHklEQVR4nO1dC3eqOhNVqCBBKy+tVrQ+j1rbnvP/f91nFchrEuKVhM+1ste6d91rQcwQJjN79oROx8LCwsLCwsLCwsLCwsLCwsLCwsLCwsLCQgi3bbRtABWsnJaB2raACiZet1X0h21bQAHuFrVrpfijbRMoYJG0a6Ru8ta2CRQwG7dspXjUtgkUcArbNZL/2rYFVPDjt2ulcNm2BRQw6rbsvINZ2yZQwCBq10jdZN62CRTwEbRspahtC6hg07bzXrdtARV8t+yW0lPbFlCAay6mRC8v/ZdfUJ9mf9o2gQLejDlvtB/esDyTHweLtk2ggM/YlJVwukZOJvQUhMCyb8pKUbniU7GHP2l1+Iow5rwRyotLzsjYI31vdfhqGDmGjNT1f8prUrFHtGtz+IqYZqasFG7Ka76SiWPca3P4ing35rzHVbpGuaV/bY5eFebYXKdc8d/ICM0/jnpNoyo2uINBIzPVNee8z+WPZxLHW6DZHEKvIPV6S8dJnP30cSstjMWUXrXiD/XGHuUqsXMmuzxfrJzH6as/xpx3uiqvudc7fcNbXjhwihBjED2cKJ5Srb+YQFau+Lnm9aJYJb43HXez2azci70GD1rJHJvrlDHlTvNDnlxXiTdn1BnF88Fx2OkcH3zmXGTOeZfXfNc7fdH2ukp8vv5y1ReX8nWJ9b8fs9LAmFvC9VvNsUexSpyOFyuFp9X58vztzo8JEWbG2Nz4s7zmWe/0jW9O+319sZI3nY07j88lc2xuVNZvF5pvTJEXXv1Segk7Lgvc8EEdwsGY805L56079nCKmHJ76riXBW6x6iycx4o0rjlC4FBeU3PsgbbFdeZOQfr14g0w9DtQx+Yi3/c8z79rIYTPwYTAl97p269W/alzfMtHi3fnUd3PhyTA89Mo3f68DofD9b9ulKoZyguy87/J9Rw/ColzcP0WT1+fR+0F+FOYH0aofBZHx4mc74eLD0I2F6XRYbWrkuvR/P0Q1Tp6FATHj0WpH8l3mzCohpCU4e+8IgS2rzxqzIR8/pQ1baaMVPnkg0EDpYcDPENQ0D1x3z5YOtJAx0/2MzYsmW2LBQ2dS+NVhAAOMwnUkPAJwGsyipm4cY3mCC7FxWdYm7aYSNxYBjMUq+x6I3D9FtshAK4ylxYHE+CMd/o3of1/tIUYU2jUKDoJb8dHJnBPfiDi+N+831Nw/far+oZqNSIh8+0xkI7NmCGEzReKoYyqf5ax9W8BaKb0W5x1L/qIqN+S0zcCZt8f8XT1voDfw4YyGlQ+QEYV/8if68ELYKaxtKQ2vwzcKYlVkhAANXBCJazfzbmDFzF7dNR4oRhgc4Pa2OKND52zGmLi8pxWDxdVSYZiYmG1IuMPHm3Z57MgBJrEghtwTBnJnZ4m+3//XpczUh36zp4V0EYa/fk7nEyOmxm+qz/xsfzPIzl9+4B5RRydAzxKX9yKqKFQzGVU/R/ir71NHIWXENr3+9l4Q9wixsGm1A+brpMs7V+C7zBwXktntHMq305PX6gWBwcDAZBlHHm3mv59xCAgVsxVkE/YYuWQoXMaY58+p4yLE7QLdt8JYUI/+SqsEJZnM9MXki4NoNwyBJRgGyBtzhoomDBg2VwibM1/mJ+AEnz9I3G3UUa4y2XCODovuH3lvHxkmemLEOBGgADc/+YV4Z9QaJXwHv5RePSYiNR5seWmPcqqxX5OrFMZDvRGPzxzhFI6RGCnLxRZ8tQKcW18FBjrHfivexAMm4urip28C8R2Po5q99WfPbyYjw5QoufTv5udJ2CawimrHT5hnbPT9goNbT8Mmxvhn7IHE7akOgAv50F1k11+wbkdQQblbp+LbwBH8snMyWzFHdLjAqUrNLT90GwuMVlPMOeKc7Eq2yJU/0MBuYYCwvXMuYcJEujmdOSaHrkjRgKONWq+7Yde0XFoL8w4o2rdLs2YVJ/MhKznmAh0gGIEFFkuyfvnH3gP/ypgcZzmmzapcaG0+nwtIkiwmLZwL9gNSOp6HjEVgGIEFFmSwQACYqqjIPLU4LxpNhdHLjsheYFDtiLyw60RJzHpSdgfLEZAkeUaH+fwyfdJVF8IHyS4AdD6mHHlhsVFRTx1bgw/Xr9yzisTwFV6sBgRr/jfhpf57JP744fwNmogBKhMAA+4J+bBsJVulAsuREoFdTgeBosRVMRfomSzY35pB0mx4kqPqiZ4UPoY/MCxyzBspatVcBgg7R0bAxEE9Xdg+S6OBCileSS8lgbl+Ii6JXgJ/QpCEbLKStdB4PknV5Hg5wCWd0GcZX6t2SCfSzhySTFHQ88mPTLcOTuSoTzo+sRhXykvRGIrCYoRCRBZXoMBPvxxZcVoDYQANft9gCyVYfU7BhwYyOvo1XG5wOVBpNBv0AYUA9aycpeGtp9JHR0mwzXuqULKGmF95b2FCgEoslz7Y35dH0qVGFnzynGKDov59VaKXweDydMacVsVVf0VPZjQTfrj8LnLSirEQM0rxxfUcnPvXP2N+nAGJqujd7EIhIwVGaTALPjkKCVxFnSFx+d7j4JurLg3S/wtdBAxprQ2XpEjko1CsH5XAnFScMO9D4QCaDosKQlHd6CEgBrZUVoZr26xpNccxfW/eACXAjE0EAI0HVaVy3InUMD1CcNczkS6xFWdXTJ1IsRZ0shrBSlR84QA7UoqxiFXl30FlS+TW6nqHZSpE/26bN6FmUHyK+6MZhTAsLlO9bl6qzNOPKSacdQvD5NGVZCahMSkVkGnYR8QZvZXVrpjLuEkVjqX0jLqcaXLeM2mAst6yaoGQoCZ/dhK6rp+HD1IBdxV4RoonZOIZApRrp4MQMM+IEwto/Led+wMg/2S1OFUGWhNVCV7YGoCpRuSxo3UYaYMvg/qfSl4jZMtXphqXL6Ij7p+n7Dg+KbiLP0f0en/Gex1sY9Rl8ljSgCsWd+Am+LEkpsCwshyoKR8VQpM7wO7TQ7mHCRM4H8xQBWu1veaowSOd0ZnpemtgRBgdR3EiIWOiVUbo+9qVH9FLifCJcvaXnNPoIgUVENZxM3vA/LFmILgnkWMbrie3HAsNykh5onAcZCinbp+L/8Mb6FXHyjdRgCJNB8Dr6QiCtHwBA/xgMtnksgu/4K7FIZ74hmq6fdiZRcVFLuvNRACPCFEXARki1AXV3HLyUamBF+ADcI9sWrV7RwKsbpXKO40poEQAGoZuB7S+eD9rE/UcHCoReiderxKJVuT3rhm59BEPEi13g4N+4AAVMcLUfiaOfSQUXDArnGKbdgnZnlvS/sPL6Gpenm7IqQHLKG2eYaGjUGh2U9yz4OfpCrWIi/wV/hP7rcPn+Muk0piiNJkwiw5UqYulWlGc1iEQ0MDIbCA7o5PLcS74TmLguDyT3fyQd6mDVV6oQpg8yWKgjgNsvF2U5qveuhkPQGQqoS8pEKge295QwFw6MLMenewm82muwU9AKahIaL7Kkbz2fv7xxRPo13ZMDuStNhBqhISvOAa+PHNEwKsuLGAxIOWmLKOXU4LDaLS8nMJm1u7I7PCjh8aCAFRLQNqGaLAqz1QKvl5cz8qb7GEEIhqpwHXbMJjrD56VQjva7KSneYugRNRLJwJ0wAHEOK+N0A0yaGuuVDHxqAS1jZ7FbuI6RacD0g0AzcOQmH5P8I9BGKVmFnS6HSDho1BZaGL76zgwGO6B6XDv4hegeRi9pISa6CQEBCluAzqNmrQ0DIgX1nT/oZzNYP3bSZbybMlfUr+8X1tN6yKTCI2V5TisqhLU7LmCQFxIfoKFCaH5azsiejtZstDbQd4P9mfigAg331O0uB2CbRf3/BP0B8cA91cE0CF5MqJZuQ1biS3Pn1EL0Hi9LuHs5c4USDTTOJT0syJ/W8/dqIY3wUEd7OXcIAHZR0nwKK3kqYpXvP9XvIGYnLg6N5th+48AfL7ywCsYOah7Js1bAxqbpucGgRAVnHt6Ia6LqTOVAMhYG7fXDlC4DG5xfaQPnIhiyxfmpd3sWxuS/C/+RS3lJVA6hGJsEXDxqB5y/vnF0DA/c9R4fchbywpymkgBHTvXacIaLpgWYkDxD9i7qVe1nM3zG16LgO02hM9OFBDibhSqIEQkAvXDCFa8T/sRFohAsrhImUP6jcv79K8d50SgO4ShpWBWng+RGlO84QAyOYaBrRhCeMuEZDgidIUDf1e0wgZg8BIPt9d0umxmSLUwiPgWMfNKwROkdfve338L+H/eNQn1GHyE6svgI2EAp5ogTYs4X+7gH+BFsQnAiwNAFNcPoiDNCRgmoKpvucEqLeEahCQatIH+DlQMa5BIWAUkMQCSnHBvTi6DhB3QpIMDf1eJgHdeWhXF658VcwRKE0BvvIp3hQiBkDRQFXcuahzIgHodKCa8hRvChGD97UIEKzlQkEgpNrlqyka5F1GwVM0kKs5iDMmaJZwoq+neO+zGPzmAWCKKxEEQlU2rpryFO99FoOjaKBXSQi3mfgFCoE0lvViT/HqUDHYmDIFHg12T04GARBbMWkKQs/w3mcxmNjGAyojdU0BqMufwyhnNbQMmAQjN4WS/J54m4kCGeDJqG2HdBACJkHLTVGXjwGkOygUMwXgWHrUI/cU730Wg44p0WE5ZKHSFBAeudOGW/KAJycEmJgS9TkokaYedxrl7lC3eTbXJDS/sqo04nMTArlnxEoa+r1MwtC7jjXIu0zCUNnPaX5HWJMwU/Z7jvc+i6H4/pQHoUEhYBI9M6820tDvZRKGXpcp3YTg/x9m3riG/OcmBGp0wE1ZqflXxJiEayYOeHJCYOeYwXMTAq4htD1OCwsLCwsLCwsLCwsLCwsLCwsLCwsLC4unw/8AR2oLAt2KUQ0AAAAASUVORK5CYII="
+                style="background-color: white; height: 88%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -4%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.edx.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:10%<br />FREE:90%</a
+              ><br /><br />
+              <a
+                href="https://www.edx.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: #f3f3f3">Edx</span> is an American massive
+                open online course provider created by Harvard and MIT.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.geeksforgeeks.org/" target="_blank"></a>
+            <img
+              src="https://www.tedxxie.in/static/media/sponsor1.2dc91b4fef8a6ef1b866.jpg"
+              style="background-color: white; height: 21.7%"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <a
+                class="card-title pictext no"
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:30%<br />FREE:70%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                ><span style="color: #499b5a">GeeksforGeeks</span> is a one-stop
+                solution for CS/IT students to learn Programming Concepts, Data
+                Structures & Algorithms, Coding Practice, etc.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.w3schools.com/" target="_blank">
+              <img
+                src="https://internet-salmagundi.com/wp-content/uploads/2019/03/W3-MatFrame-895x493px-Qual100.jpg"
+                style="background-color: white; height: 94%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -2%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.w3schools.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:10%<br />FREE:90%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.w3schools.com/"
+                target="_blank"
+                ><span style="color: #7a7b7a">W3school</span> create simplified
+                and interactive learning experiences. Learning web development
+                should be easy to understand.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.udacity.com/" target="_blank">
+              <img
+                src="https://uploads-ssl.webflow.com/5d58e3031e139811311ef0d6/5edeaf67cc966449938cd1f3_udacity.png"
+                style="background-color: white; height: 93%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -2%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:40%<br />FREE:60%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                ><span style="color: #52ddf6">Udacity</span> has around 200
+                courses that are completely free.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+        </div>
+        <br /><br /><br /><br /><br /><br />
+        <h1 class="sideh">
+          Top Interior Designing Sites 2022&#160;&#160;&#160;&#160;
+        </h1>
+        <div class="card-group" style="width: 65rem">
+          <div class="card pics">
+            <a href="https://www.udemy.com/" target="_blank">
+              <img
+                src="https://s.udemycdn.com/meta/default-meta-image-v2.png"
+                style="background-color: white; height: 98%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.udemy.com/"
+                style="font-size: 14px"
+                >PAID:80%<br />FREE:20%</a
+              ><br /><br />
+              <a class="card-text pictext no" href="https://www.udemy.com/"
+                ><span style="color: #b349f9">Udemy</span> is an online learning
+                and teaching marketplace with over 185000 courses and 49 million
+                students.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 2 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.coursera.org/" target="_blank">
+              <img
+                src="https://149362230.v2.pressablecdn.com/wp-content/uploads/2018/08/coursera-social-logo-brand.png"
+                style="background-color: white; height: 98%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.coursera.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:70%</a
+              ><br />
+              <a
+                class="card-title pictext pictext no"
+                href="https://www.coursera.org/for-university-and-college-students"
+                target="_blank"
+                style="font-size: 14px"
+                >FREE:30%</a
+              ><br /><br />
+              <a
+                href="https://www.coursera.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: #0083fe">Coursera</span> is an open online
+                course website featuring post-secondary courses from top global
+                academic institutions.</a
+              ><br /><br /><br />
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 5 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.edx.org/" target="_blank">
+              <img
+                src="data:image/png;base64,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"
+                style="background-color: white; height: 88%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -4%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.edx.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:10%<br />FREE:90%</a
+              ><br /><br />
+              <a
+                href="https://www.edx.org/"
+                target="_blank"
+                class="card-text pictext no"
+                ><span style="color: #f3f3f3">Edx</span> is an American massive
+                open online course provider created by Harvard and MIT.<br /><br /><br
+              /></a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.geeksforgeeks.org/" target="_blank"></a>
+            <img
+              src="https://www.tedxxie.in/static/media/sponsor1.2dc91b4fef8a6ef1b866.jpg"
+              style="background-color: white; height: 21.7%"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <a
+                class="card-title pictext no"
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:30%<br />FREE:70%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.geeksforgeeks.org/"
+                target="_blank"
+                ><span style="color: #499b5a">GeeksforGeeks</span> is a one-stop
+                solution for CS/IT students to learn Programming Concepts, Data
+                Structures & Algorithms, Coding Practice, etc.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.w3schools.com/" target="_blank">
+              <img
+                src="https://internet-salmagundi.com/wp-content/uploads/2019/03/W3-MatFrame-895x493px-Qual100.jpg"
+                style="background-color: white; height: 94%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -2%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.w3schools.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:10%<br />FREE:90%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.w3schools.com/"
+                target="_blank"
+                ><span style="color: #7a7b7a">W3school</span> create simplified
+                and interactive learning experiences. Learning web development
+                should be easy to understand.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+          <div class="card pics">
+            <a href="https://www.udacity.com/" target="_blank">
+              <img
+                src="https://uploads-ssl.webflow.com/5d58e3031e139811311ef0d6/5edeaf67cc966449938cd1f3_udacity.png"
+                style="background-color: white; height: 93%"
+                class="card-img-top"
+                alt="..."
+            /></a>
+            <div class="card-body" style="transform: translate(0%, -2%)">
+              <a
+                class="card-title pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                style="font-size: 14px"
+                >PAID:40%<br />FREE:60%</a
+              ><br /><br />
+              <a
+                class="card-text pictext no"
+                href="https://www.udacity.com/"
+                target="_blank"
+                ><span style="color: #52ddf6">Udacity</span> has around 200
+                courses that are completely free.</a
+              >
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 7 hrs ago</small>
+            </div>
+          </div>
+        </div>
+        <br /><br /><br /><br /><br /><br />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- completed -->
